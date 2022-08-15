@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_feed/data/category_info.dart';
-import 'package:news_feed/view/components/category_chips.dart';
-import 'package:news_feed/view/components/search_bar.dart';
+import 'package:news_feed/ui/components/category_chips.dart';
+import 'package:news_feed/ui/components/search_bar.dart';
 
 class NewsListPage extends StatelessWidget {
   const NewsListPage({Key? key}) : super(key: key);
