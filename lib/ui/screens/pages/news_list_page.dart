@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_feed/const/strings.dart' as strings;
 import 'package:news_feed/data/category_info.dart';
 import 'package:news_feed/ui/components/category_chips.dart';
 import 'package:news_feed/ui/components/search_bar.dart';
@@ -12,7 +13,7 @@ class NewsListPage extends StatelessWidget {
       child: Scaffold(
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.refresh),
-          tooltip: "更新",
+          tooltip: strings.refresh,
           onPressed: () => onRefresh(context),
         ),
         body: Padding(

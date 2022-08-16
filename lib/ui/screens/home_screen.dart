@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_feed/const/strings.dart' as strings;
 import 'package:news_feed/ui/screens/pages/about_us_page.dart';
 import 'package:news_feed/ui/screens/pages/head_line_page.dart';
 import 'package:news_feed/ui/screens/pages/news_list_page.dart';
@@ -29,15 +30,15 @@ class _HomeScreenState extends State<HomeScreen> {
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.highlight),
-              label: "ヘッドライン",
+              label: strings.HeadLine,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.list),
-              label: "ニュース一覧",
+              label: strings.NewsList,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.info),
-              label: "このアプリについて",
+              label: strings.AboutApp,
             ),
           ],
           onTap: (index) {
