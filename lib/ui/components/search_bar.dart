@@ -3,7 +3,6 @@ import 'package:news_feed/const/strings.dart' as strings;
 
 class SearchBar extends StatelessWidget {
   final ValueChanged onSearch;
-  final TextEditingController _textEditingController = TextEditingController();
 
   SearchBar({required this.onSearch});
 
@@ -18,7 +17,6 @@ class SearchBar extends StatelessWidget {
         child: TextField(
           onSubmitted: onSearch,
           maxLines: 1,
-          controller: _textEditingController,
           decoration: const InputDecoration(
               icon: Icon(Icons.search),
               hintText: strings.InputSearchWord,
