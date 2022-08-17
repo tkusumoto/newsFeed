@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 
-class AboutUsPage extends StatefulWidget {
+class AboutUsPage extends HookWidget {
   const AboutUsPage({Key? key}) : super(key: key);
 
-  @override
-  State<AboutUsPage> createState() => _AboutUsPageState();
-}
-
-class _AboutUsPageState extends State<AboutUsPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(

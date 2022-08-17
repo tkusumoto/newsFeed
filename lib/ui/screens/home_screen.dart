@@ -1,32 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:news_feed/const/strings.dart' as strings;
 import 'package:news_feed/ui/screens/pages/about_us_page.dart';
 import 'package:news_feed/ui/screens/pages/head_line_page.dart';
 import 'package:news_feed/ui/screens/pages/news_list_page.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends HookWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  int _currentIndex = 0;
-
-  final _pages = [
-    HeadLinePage(),
-    NewsListPage(),
-    AboutUsPage(),
-  ];
-
-  @override
   Widget build(BuildContext context) {
+    final currentIndex = useState(0);
+
+    final pages = [
+      const HeadLinePage(),
+      const NewsListPage(),
+      const AboutUsPage(),
+    ];
+
     return SafeArea(
       child: Scaffold(
-        body: _pages[_currentIndex],
+        body: pages[currentIndex.value],
         bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _currentIndex,
+          currentIndex: currentIndex.value,
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.highlight),
@@ -41,11 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
               label: strings.AboutApp,
             ),
           ],
-          onTap: (index) {
-            setState(() {
-              _currentIndex = index;
-            });
-          },
+          onTap: (index) => currentIndex.value = index,
         ),
       ),
     );
