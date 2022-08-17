@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_feed/const/strings.dart' as strings;
 
 class SearchBar extends StatelessWidget {
   final ValueChanged onSearch;
@@ -20,7 +21,7 @@ class SearchBar extends StatelessWidget {
           controller: _textEditingController,
           decoration: const InputDecoration(
               icon: Icon(Icons.search),
-              hintText: "検索ワードを入れてください",
+              hintText: strings.InputSearchWord,
               border: InputBorder.none),
         ),
       ),

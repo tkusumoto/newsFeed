@@ -13,7 +13,7 @@ class NewsListPage extends StatelessWidget {
       child: Scaffold(
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.refresh),
-          tooltip: strings.refresh,
+          tooltip: strings.Refresh,
           onPressed: () => onRefresh(context),
         ),
         body: Padding(

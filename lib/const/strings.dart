@@ -3,4 +3,5 @@ const AppName = "NewsFeed";
 const HeadLine = "ヘッドライン";
 const NewsList = "ニュース一覧";
 const AboutApp = "このアプリについて";
-const refresh = "更新";
+const Refresh = "更新";
+const InputSearchWord = "検索ワードを入れてください";
