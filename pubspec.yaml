@@ -42,6 +42,9 @@ dependencies:
   flutter_hooks: ^0.18.5+1
   hooks_riverpod: ^2.0.0-dev.9
 
+  # For Networking
+  http: ^0.13.5
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
