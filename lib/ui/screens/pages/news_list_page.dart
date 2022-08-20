@@ -12,8 +12,6 @@ class NewsListPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final loading = ref.watch(newsViewModelProvider);
-
     return SafeArea(
       child: Scaffold(
         floatingActionButton: FloatingActionButton(
@@ -59,7 +57,8 @@ class NewsListPage extends ConsumerWidget {
   }
 
   // キーワード記事取得処理
-  Future<void> getKeywordNews(BuildContext context, keyword, WidgetRef ref) async {
+  Future<void> getKeywordNews(
+      BuildContext context, keyword, WidgetRef ref) async {
     print("newsListPage.getKeywordNews");
     final viewModel = ref.read(newsViewModelProvider);
     await viewModel.fetchNews(
@@ -70,7 +69,8 @@ class NewsListPage extends ConsumerWidget {
   }
 
   // カテゴリー記事取得処理
-  Future<void> getCategoryNews(BuildContext context, Category category, WidgetRef ref) async {
+  Future<void> getCategoryNews(
+      BuildContext context, Category category, WidgetRef ref) async {
     print("newsListPage.getCategoryNews: ${category.nameJp}");
     final viewModel = ref.read(newsViewModelProvider);
     await viewModel.fetchNews(
