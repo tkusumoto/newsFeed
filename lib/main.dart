@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:news_feed/const/strings.dart' as strings;
+import 'package:news_feed/const/strings.dart';
 
 import 'style/style.dart' as styles;
 import 'ui/screens/home_screen.dart';
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: strings.AppName,
+      title: Strings.AppName,
       theme: ThemeData(
         brightness: Brightness.dark,
         fontFamily: styles.BoldFont,

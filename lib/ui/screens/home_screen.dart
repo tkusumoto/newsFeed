@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:news_feed/const/strings.dart' as strings;
+import 'package:news_feed/const/strings.dart';
 import 'package:news_feed/ui/screens/pages/about_us_page.dart';
 import 'package:news_feed/ui/screens/pages/head_line_page.dart';
 import 'package:news_feed/ui/screens/pages/news_list_page.dart';
@@ -27,15 +27,15 @@ class HomeScreen extends HookConsumerWidget {
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.highlight),
-              label: strings.HeadLine,
+              label: Strings.HeadLine,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.list),
-              label: strings.NewsList,
+              label: Strings.NewsList,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.info),
-              label: strings.AboutApp,
+              label: Strings.AboutApp,
             ),
           ],
           onTap: (index) => currentIndex.value = index,

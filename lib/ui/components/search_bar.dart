@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_feed/const/strings.dart' as strings;
+import 'package:news_feed/const/strings.dart';
 
 class SearchBar extends StatelessWidget {
   final ValueChanged onSearch;
@@ -19,7 +19,7 @@ class SearchBar extends StatelessWidget {
           maxLines: 1,
           decoration: const InputDecoration(
               icon: Icon(Icons.search),
-              hintText: strings.InputSearchWord,
+              hintText: Strings.InputSearchWord,
               border: InputBorder.none),
         ),
       ),
