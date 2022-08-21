@@ -5,4 +5,5 @@ class Strings {
   static const String NewsList = "ニュース一覧";
   static const String AboutApp = "このアプリについて";
   static const String Refresh = "更新";
+  static const String DataEmpty = "データはありません";
 }

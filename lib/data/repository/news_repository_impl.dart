@@ -9,12 +9,10 @@ import 'package:news_feed/data/model/news.dart';
 import 'package:news_feed/data/repository/news_repository.dart';
 import 'package:news_feed/data/search_type.dart';
 
-final newsRepositoryProvider = Provider((ref) => NewsRepositoryImpl(ref.read));
+final newsRepositoryProvider = Provider((ref) => NewsRepositoryImpl());
 
 class NewsRepositoryImpl implements NewsRepository {
-  NewsRepositoryImpl(this._reader);
-
-  final Reader _reader;
+  NewsRepositoryImpl();
 
   static const SUCCESS = 200;
 
@@ -49,6 +47,7 @@ class NewsRepositoryImpl implements NewsRepository {
     if (response.statusCode == SUCCESS) {
       final responseBody = response.body;
       results = News.fromJson(jsonDecode(responseBody)).articles;
+      print("result :$results");
     } else {
       // TODO エラーハンドリングの調整
 
