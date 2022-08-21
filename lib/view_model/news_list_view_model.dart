@@ -6,6 +6,7 @@ import 'package:news_feed/data/repository/news_repository.dart';
 import 'package:news_feed/data/repository/news_repository_impl.dart';
 import 'package:news_feed/data/search_type.dart';
 
+// TODO 後ほどFutureProvider等へ変更予定
 final newsViewModelProvider =
     ChangeNotifierProvider((ref) => NewsListViewModel(ref.read));
 
