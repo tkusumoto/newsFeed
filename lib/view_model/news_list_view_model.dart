@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:news_feed/data/category_info.dart';
+import 'package:news_feed/data/model/article.dart';
 import 'package:news_feed/data/repository/news_repository.dart';
 import 'package:news_feed/data/repository/news_repository_impl.dart';
 import 'package:news_feed/data/search_type.dart';
@@ -26,6 +27,9 @@ class NewsListViewModel extends ChangeNotifier {
   bool _isLoading = false;
   bool get isLoading => _isLoading;
 
+  List<Article>? _articles;
+  List<Article>? get articles => _articles;
+
   Future<void> fetchNews({
     required SearchType searchType,
     String? keyword,
@@ -40,11 +44,13 @@ class NewsListViewModel extends ChangeNotifier {
 
     _isLoading = true;
 
-    await _repository.getNews(
-      searchType: _searchType,
-      keyword: _keyword,
-      category: _category,
-    );
+    await _repository
+        .getNews(
+          searchType: _searchType,
+          keyword: _keyword,
+          category: _category,
+        )
+        .then((value) => _articles = value);
 
     _isLoading = false;
   }

@@ -1,5 +1,6 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:news_feed/data/category_info.dart';
+import 'package:news_feed/data/model/article.dart';
 import 'package:news_feed/data/repository/news_repository.dart';
 import 'package:news_feed/data/search_type.dart';
 
@@ -11,7 +12,7 @@ class NewsRepositoryImpl implements NewsRepository {
   final Reader _reader;
 
   @override
-  Future<void> getNews({
+  Future<List<Article>> getNews({
     required SearchType searchType,
     String? keyword,
     Category? category,
