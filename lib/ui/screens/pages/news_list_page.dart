@@ -12,6 +12,12 @@ class NewsListPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final viewModel = ref.read(viewModelProvider.notifier);
+    viewModel.setParameters(
+      searchType: SearchType.CATEGORY,
+      category: categories[0],
+    );
+
     final asyncValue = ref.watch(newsListProvider);
 
     return SafeArea(
@@ -47,8 +53,8 @@ class NewsListPage extends ConsumerWidget {
                                 Strings.EmptyString),
                           ),
                         )
-                      : const Text(Strings.DataEmpty),
-                  error: (error, _) => Text(error.toString()),
+                      : const Center(child: Text(Strings.DataEmpty)),
+                  error: (error, _) => Center(child: Text(error.toString())),
                   loading: () =>
                       const Center(child: CircularProgressIndicator()),
                 ),
@@ -62,35 +68,41 @@ class NewsListPage extends ConsumerWidget {
 
   // 記事更新処理
   Future<void> onRefresh(BuildContext context, WidgetRef ref) async {
-    print("newsListPage.onRefresh");
-    final viewModelNotifier = ref.read(viewModelProvider.notifier);
-    viewModelNotifier.fetchNews(
-      searchType: viewModelNotifier.searchType,
-      keyword: viewModelNotifier.keyword,
-      category: viewModelNotifier.category,
+    final viewModel = ref.read(viewModelProvider.notifier);
+
+    viewModel.setParameters(
+      searchType: viewModel.searchType,
+      keyword: viewModel.keyword,
+      category: viewModel.category,
     );
+
+    ref.read(counterProvider.notifier).update((state) => state + 1);
   }
 
   // キーワード記事取得処理
   Future<void> getKeywordNews(
       BuildContext context, keyword, WidgetRef ref) async {
-    print("newsListPage.getKeywordNews");
-    final viewModelNotifier = ref.read(viewModelProvider.notifier);
-    viewModelNotifier.fetchNews(
+    final viewModel = ref.read(viewModelProvider.notifier);
+
+    viewModel.setParameters(
       searchType: SearchType.KEYWORD,
       keyword: keyword,
       category: categories[0],
     );
+
+    ref.read(counterProvider.notifier).update((state) => state + 1);
   }
 
   // カテゴリー記事取得処理
   Future<void> getCategoryNews(
       BuildContext context, Category category, WidgetRef ref) async {
-    print("newsListPage.getCategoryNews: ${category.nameJp}");
-    final viewModelNotifier = ref.read(viewModelProvider.notifier);
-    viewModelNotifier.fetchNews(
+    final viewModel = ref.read(viewModelProvider.notifier);
+
+    viewModel.setParameters(
       searchType: SearchType.CATEGORY,
       category: category,
     );
+
+    ref.read(counterProvider.notifier).update((state) => state + 1);
   }
 }

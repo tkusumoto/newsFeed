@@ -18,26 +18,36 @@ class NewsListViewModel extends StateNotifier<AsyncValue<List<Article>>> {
   String _keyword = "";
   String get keyword => _keyword;
 
-  Future<void> fetchNews({
+  setParameters({
     required SearchType searchType,
     String? keyword,
     Category? category,
-  }) async {
-    print(
-        "[ViewModel] searchType: $searchType / keyword: $keyword / category: ${category?.nameJp}");
-
+  }) {
     _searchType = searchType;
-    _category = category ?? categories[0];
     _keyword = keyword ?? "";
-
-    state = const AsyncLoading();
-
-    state = await AsyncValue.guard(() async {
-      return await repository.getNews(
-        searchType: _searchType,
-        keyword: _keyword,
-        category: _category,
-      );
-    });
+    _category = category ?? categories[0];
   }
+
+  // Future<void> fetchNews({
+  //   required SearchType searchType,
+  //   String? keyword,
+  //   Category? category,
+  // }) async {
+  //   print(
+  //       "[ViewModel] searchType: $searchType / keyword: $keyword / category: ${category?.nameJp}");
+  //
+  //   _searchType = searchType;
+  //   _category = category ?? categories[0];
+  //   _keyword = keyword ?? "";
+  //
+  //   state = const AsyncLoading();
+  //
+  //   state = await AsyncValue.guard(() async {
+  //     return await repository.getNews(
+  //       searchType: _searchType,
+  //       keyword: _keyword,
+  //       category: _category,
+  //     );
+  //   });
+  // }
 }
