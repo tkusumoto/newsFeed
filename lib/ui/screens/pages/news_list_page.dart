@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:news_feed/const/strings.dart';
 import 'package:news_feed/data/category_info.dart';
-import 'package:news_feed/data/model/article.dart';
 import 'package:news_feed/data/search_type.dart';
 import 'package:news_feed/main.dart';
 import 'package:news_feed/ui/components/category_chips.dart';
@@ -37,21 +36,21 @@ class NewsListPage extends ConsumerWidget {
               ),
               //記事表示
               Expanded(
-                child: Center(
-                  child: asyncValue.when(
-                    data: (list) => list.isNotEmpty
-                        ? ListView(
-                            children: list
-                                .map(
-                                  (Article article) =>
-                                      Text(article.title.toString()),
-                                )
-                                .toList(),
-                          )
-                        : const Text(Strings.DataEmpty),
-                    error: (error, _) => Text(error.toString()),
-                    loading: () => const CircularProgressIndicator(),
-                  ),
+                child: asyncValue.when(
+                  data: (articles) => articles.isNotEmpty
+                      ? ListView.builder(
+                          itemCount: articles.length,
+                          itemBuilder: (context, position) => ListTile(
+                            title: Text(articles[position].title ??
+                                Strings.EmptyString),
+                            subtitle: Text(articles[position].description ??
+                                Strings.EmptyString),
+                          ),
+                        )
+                      : const Text(Strings.DataEmpty),
+                  error: (error, _) => Text(error.toString()),
+                  loading: () =>
+                      const Center(child: CircularProgressIndicator()),
                 ),
               ),
             ],

@@ -6,4 +6,5 @@ class Strings {
   static const String AboutApp = "このアプリについて";
   static const String Refresh = "更新";
   static const String DataEmpty = "データはありません";
+  static const String EmptyString = "";
 }
