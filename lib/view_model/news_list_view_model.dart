@@ -32,15 +32,12 @@ class NewsListViewModel extends StateNotifier<AsyncValue<List<Article>>> {
 
     state = const AsyncLoading();
 
-    try {
-      final newsList = await repository.getNews(
+    state = await AsyncValue.guard(() async {
+      return await repository.getNews(
         searchType: _searchType,
         keyword: _keyword,
         category: _category,
       );
-      state = AsyncData(newsList);
-    } on Exception catch (error) {
-      state = AsyncError(error);
-    }
+    });
   }
 }
