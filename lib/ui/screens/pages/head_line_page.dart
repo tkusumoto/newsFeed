@@ -6,6 +6,7 @@ import 'package:news_feed/data/model/article.dart';
 import 'package:news_feed/data/search_type.dart';
 import 'package:news_feed/main.dart';
 import 'package:news_feed/ui/components/article_tile.dart';
+import 'package:news_feed/ui/screens/web_page_screen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HeadLinePage extends ConsumerWidget {
@@ -79,5 +80,10 @@ class HeadLinePage extends ConsumerWidget {
 
   _openArticleWebPage(Article article, BuildContext context) {
     print("head_line_page._openArticleWebPage: ${article.url}");
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => WebPageScreen(article: article),
+      ),
+    );
   }
 }

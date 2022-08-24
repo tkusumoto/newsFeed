@@ -8,6 +8,7 @@ import 'package:news_feed/main.dart';
 import 'package:news_feed/ui/components/article_tile.dart';
 import 'package:news_feed/ui/components/category_chips.dart';
 import 'package:news_feed/ui/components/search_bar.dart';
+import 'package:news_feed/ui/screens/web_page_screen.dart';
 
 class NewsListPage extends ConsumerWidget {
   const NewsListPage({Key? key}) : super(key: key);
@@ -109,5 +110,10 @@ class NewsListPage extends ConsumerWidget {
 
   _openArticleWebPage(Article article, BuildContext context) {
     print("_openArticleWebPage: ${article.url}");
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => WebPageScreen(article: article),
+      ),
+    );
   }
 }
