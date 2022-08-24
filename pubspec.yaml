@@ -52,6 +52,9 @@ dependencies:
   # For Image
   cached_network_image: ^3.2.1
 
+  # Page Indicator
+  smooth_page_indicator: ^1.0.0+2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
