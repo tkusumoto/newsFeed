@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:news_feed/const/strings.dart';
 import 'package:news_feed/data/category_info.dart';
+import 'package:news_feed/data/model/article.dart';
 import 'package:news_feed/data/search_type.dart';
 import 'package:news_feed/main.dart';
+import 'package:news_feed/ui/components/article_tile.dart';
 import 'package:news_feed/ui/components/category_chips.dart';
 import 'package:news_feed/ui/components/search_bar.dart';
 
@@ -46,11 +48,10 @@ class NewsListPage extends ConsumerWidget {
                   data: (articles) => articles.isNotEmpty
                       ? ListView.builder(
                           itemCount: articles.length,
-                          itemBuilder: (context, position) => ListTile(
-                            title: Text(articles[position].title ??
-                                Strings.EmptyString),
-                            subtitle: Text(articles[position].description ??
-                                Strings.EmptyString),
+                          itemBuilder: (context, position) => ArticleTile(
+                            article: articles[position],
+                            onArticleClicked: (article) =>
+                                _openArticleWebPage(article, context),
                           ),
                         )
                       : const Center(child: Text(Strings.DataEmpty)),
@@ -104,5 +105,9 @@ class NewsListPage extends ConsumerWidget {
     );
 
     ref.read(counterProvider.notifier).update((state) => state + 1);
+  }
+
+  _openArticleWebPage(Article article, BuildContext context) {
+    print("_openArticleWebPage: ${article.url}");
   }
 }
