@@ -28,8 +28,8 @@ class NewsRepositoryImpl implements NewsRepository {
 
     switch (searchType) {
       case SearchType.HEAD_LINE:
-        final url =
-            Uri.parse("${Constants.BASE_URL}&apiKey=${Constants.API_KEY}");
+        final url = Uri.parse(
+            "${Constants.BASE_URL}&pageSize=${Constants.PAGE_SIZE}&apiKey=${Constants.API_KEY}");
         response = await http.get(url);
         break;
       case SearchType.KEYWORD:
