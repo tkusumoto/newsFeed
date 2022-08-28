@@ -1,16 +1,23 @@
 # news_feed
 
-A new Flutter project.
+Flutter ニュースフィードアプリ.
 
-## Getting Started
+## App architecture
 
-This project is a starting point for a Flutter application.
+- [Riverpod](https://riverpod.dev/ja/docs/getting_started) + [flutter Hooks](https://github.com/rrousselGit/flutter_hooks) + MVVM + Repositoryパターン
 
-A few resources to get you started if this is your first Flutter project:
+## Code Style
+- [flutter_lints](https://pub.dev/packages/flutter_lints)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Networking
+- [http](https://pub.dev/packages/http)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Models
+- [Freezed](https://pub.dev/packages/freezed)
+
+## Icon
+- [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons)
+
+## Git Commit message style
+- [Semantic Commit Messages](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)
+
