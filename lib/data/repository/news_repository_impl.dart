@@ -47,7 +47,6 @@ class NewsRepositoryImpl implements NewsRepository {
     if (response.statusCode == SUCCESS) {
       final responseBody = response.body;
       results = News.fromJson(jsonDecode(responseBody)).articles;
-      print("result :$results");
     } else {
       // TODO エラーハンドリングの調整
 

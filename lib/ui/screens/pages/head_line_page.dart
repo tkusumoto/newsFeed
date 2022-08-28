@@ -68,7 +68,6 @@ class HeadLinePage extends ConsumerWidget {
   }
 
   onRefresh(BuildContext context, WidgetRef ref) async {
-    print("HeadLinePage.onRefresh");
     final viewModel = ref.read(viewModelProvider.notifier);
 
     viewModel.setParameters(
@@ -79,7 +78,6 @@ class HeadLinePage extends ConsumerWidget {
   }
 
   _openArticleWebPage(Article article, BuildContext context) {
-    print("head_line_page._openArticleWebPage: ${article.url}");
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => WebPageScreen(article: article),

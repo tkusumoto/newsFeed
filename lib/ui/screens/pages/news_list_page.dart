@@ -109,7 +109,6 @@ class NewsListPage extends ConsumerWidget {
   }
 
   _openArticleWebPage(Article article, BuildContext context) {
-    print("_openArticleWebPage: ${article.url}");
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => WebPageScreen(article: article),
