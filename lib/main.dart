@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
         fontFamily: styles.BoldFont,
       ),
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }
