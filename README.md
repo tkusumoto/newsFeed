@@ -5,7 +5,7 @@ Flutter ニュースフィードアプリ.
 ## App architecture
 
 - [Riverpod](https://riverpod.dev/ja/docs/getting_started) + [flutter Hooks](https://github.com/rrousselGit/flutter_hooks) + MVVM + Repositoryパターン
-  <img alt="アーキテクチャーイメージ" src="https://user-images.githubusercontent.com/8766035/187112166-792df25c-a899-4c88-a401-9b208d8b4421.png" width="75%" />
+  <img alt="アーキテクチャーイメージ" src="https://user-images.githubusercontent.com/8766035/187113704-895dd464-4bc4-4ab1-b8d5-dbfd34a7b602.png" width="75%" />
 
 ## Code Style
 - [flutter_lints](https://pub.dev/packages/flutter_lints)
