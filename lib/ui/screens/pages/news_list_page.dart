@@ -17,7 +17,7 @@ class NewsListPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final viewModel = ref.read(viewModelProvider.notifier);
     viewModel.setParameters(
-      searchType: SearchType.CATEGORY,
+      searchType: SearchType.category,
       category: categories[0],
     );
 
@@ -26,9 +26,9 @@ class NewsListPage extends ConsumerWidget {
     return SafeArea(
       child: Scaffold(
         floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.refresh),
-          tooltip: Strings.Refresh,
+          tooltip: Strings.refresh,
           onPressed: () => onRefresh(context, ref),
+          child: const Icon(Icons.refresh),
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -55,7 +55,7 @@ class NewsListPage extends ConsumerWidget {
                                 _openArticleWebPage(article, context),
                           ),
                         )
-                      : const Center(child: Text(Strings.DataEmpty)),
+                      : const Center(child: Text(Strings.dataEmpty)),
                   error: (error, _) => Center(child: Text(error.toString())),
                   loading: () =>
                       const Center(child: CircularProgressIndicator()),
@@ -87,7 +87,7 @@ class NewsListPage extends ConsumerWidget {
     final viewModel = ref.read(viewModelProvider.notifier);
 
     viewModel.setParameters(
-      searchType: SearchType.KEYWORD,
+      searchType: SearchType.keyword,
       keyword: keyword,
       category: categories[0],
     );
@@ -101,7 +101,7 @@ class NewsListPage extends ConsumerWidget {
     final viewModel = ref.read(viewModelProvider.notifier);
 
     viewModel.setParameters(
-      searchType: SearchType.CATEGORY,
+      searchType: SearchType.category,
       category: category,
     );
 

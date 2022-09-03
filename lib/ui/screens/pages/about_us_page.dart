@@ -15,7 +15,7 @@ class AboutUsPage extends HookConsumerWidget {
     return SafeArea(
       child: Scaffold(
         floatingActionButton: FloatingActionButton(
-          tooltip: Strings.AnimationStart,
+          tooltip: Strings.animationStart,
           onPressed: () => selected.value = !selected.value,
           child: const Icon(Icons.play_arrow),
         ),
@@ -27,7 +27,7 @@ class AboutUsPage extends HookConsumerWidget {
             duration: const Duration(seconds: 2),
             curve: Curves.bounceOut,
             child: Text(
-              Strings.WelcomeApp,
+              Strings.welcomeApp,
               style: textTheme.titleLarge?.copyWith(
                 fontWeight: FontWeight.bold,
               ),

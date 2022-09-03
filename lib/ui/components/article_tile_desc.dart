@@ -18,7 +18,7 @@ class ArticleTileDesc extends ConsumerWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          article.title ?? Strings.EmptyString,
+          article.title ?? Strings.emptyString,
           style: textTheme.titleLarge?.copyWith(
             fontWeight: FontWeight.bold,
           ),
@@ -40,7 +40,7 @@ class ArticleTileDesc extends ConsumerWidget {
           overflow: TextOverflow.ellipsis,
           maxLines: 3,
           style: textTheme.bodyLarge?.copyWith(
-            fontFamily: RegularFont,
+            fontFamily: regularFont,
           ),
         ),
       ],

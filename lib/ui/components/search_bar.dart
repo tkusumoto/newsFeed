@@ -19,7 +19,7 @@ class SearchBar extends StatelessWidget {
           maxLines: 1,
           decoration: const InputDecoration(
               icon: Icon(Icons.search),
-              hintText: Strings.InputSearchWord,
+              hintText: Strings.inputSearchWord,
               border: InputBorder.none),
         ),
       ),

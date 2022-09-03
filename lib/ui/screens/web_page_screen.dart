@@ -14,7 +14,7 @@ class WebPageScreen extends ConsumerWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text(article.title ?? Strings.EmptyString),
+          title: Text(article.title ?? Strings.emptyString),
           centerTitle: true,
         ),
         body: WebView(

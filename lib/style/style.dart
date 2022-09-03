@@ -1,3 +1,3 @@
 // テキストスタイル
-const RegularFont = "Regular";
-const BoldFont = "Bold";
+const regularFont = "Regular";
+const boldFont = "Bold";

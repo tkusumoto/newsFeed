@@ -11,7 +11,7 @@ class ImageFromUrl extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final isInvalidUrl =
         (imageUrl != null) ? imageUrl!.startsWith("http") : false;
-    if (imageUrl == null || imageUrl == Strings.EmptyString || !isInvalidUrl) {
+    if (imageUrl == null || imageUrl == Strings.emptyString || !isInvalidUrl) {
       return const Icon(Icons.broken_image);
     } else {
       return CachedNetworkImage(

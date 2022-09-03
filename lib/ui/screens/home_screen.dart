@@ -27,15 +27,15 @@ class HomeScreen extends HookConsumerWidget {
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.highlight),
-              label: Strings.HeadLine,
+              label: Strings.headLine,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.list),
-              label: Strings.NewsList,
+              label: Strings.newsList,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.info),
-              label: Strings.AboutApp,
+              label: Strings.aboutApp,
             ),
           ],
           onTap: (index) => currentIndex.value = index,

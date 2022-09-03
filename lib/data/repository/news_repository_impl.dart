@@ -14,7 +14,7 @@ final newsRepositoryProvider = Provider((ref) => NewsRepositoryImpl());
 class NewsRepositoryImpl implements NewsRepository {
   NewsRepositoryImpl();
 
-  static const SUCCESS = 200;
+  static const success = 200;
 
   @override
   Future<List<Article>> getNews({
@@ -27,24 +27,24 @@ class NewsRepositoryImpl implements NewsRepository {
     http.Response? response;
 
     switch (searchType) {
-      case SearchType.HEAD_LINE:
+      case SearchType.headLine:
         final url = Uri.parse(
-            "${Constants.BASE_URL}&pageSize=${Constants.PAGE_SIZE}&apiKey=${Constants.API_KEY}");
+            "${Constants.baseUrl}&pageSize=${Constants.pageSize}&apiKey=${Constants.apiKey}");
         response = await http.get(url);
         break;
-      case SearchType.KEYWORD:
+      case SearchType.keyword:
         final url = Uri.parse(
-            "${Constants.BASE_URL}&q=$keyword&pageSize=30&apiKey=${Constants.API_KEY}");
+            "${Constants.baseUrl}&q=$keyword&pageSize=30&apiKey=${Constants.apiKey}");
         response = await http.get(url);
         break;
-      case SearchType.CATEGORY:
+      case SearchType.category:
         final url = Uri.parse(
-            "${Constants.BASE_URL}&category=${category?.nameEn}&apiKey=${Constants.API_KEY}");
+            "${Constants.baseUrl}&category=${category?.nameEn}&apiKey=${Constants.apiKey}");
         response = await http.get(url);
         break;
     }
 
-    if (response.statusCode == SUCCESS) {
+    if (response.statusCode == success) {
       final responseBody = response.body;
       results = News.fromJson(jsonDecode(responseBody)).articles;
     } else {

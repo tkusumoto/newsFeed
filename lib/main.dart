@@ -45,10 +45,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: Strings.AppName,
+      title: Strings.appName,
       theme: ThemeData(
         brightness: Brightness.dark,
-        fontFamily: styles.BoldFont,
+        fontFamily: styles.boldFont,
       ),
       home: const HomeScreen(),
     );

@@ -9,7 +9,7 @@ class NewsListViewModel extends StateNotifier<AsyncValue<List<Article>>> {
 
   final NewsRepository repository;
 
-  SearchType _searchType = SearchType.CATEGORY;
+  SearchType _searchType = SearchType.category;
   SearchType get searchType => _searchType;
 
   Category _category = categories[0];

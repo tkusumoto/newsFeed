@@ -1,12 +1,12 @@
 class Strings {
-  static const String InputSearchWord = "検索ワードを入れてください";
-  static const String AppName = "NewsFeed";
-  static const String HeadLine = "ヘッドライン";
-  static const String NewsList = "ニュース一覧";
-  static const String AboutApp = "このアプリについて";
-  static const String Refresh = "更新";
-  static const String DataEmpty = "データはありません";
-  static const String EmptyString = "";
-  static const String AnimationStart = "アニメーション開始";
-  static const String WelcomeApp = "Welcome NewsFeed";
+  static const String inputSearchWord = "検索ワードを入れてください";
+  static const String appName = "NewsFeed";
+  static const String headLine = "ヘッドライン";
+  static const String newsList = "ニュース一覧";
+  static const String aboutApp = "このアプリについて";
+  static const String refresh = "更新";
+  static const String dataEmpty = "データはありません";
+  static const String emptyString = "";
+  static const String animationStart = "アニメーション開始";
+  static const String welcomeApp = "Welcome NewsFeed";
 }

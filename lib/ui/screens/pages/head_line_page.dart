@@ -16,7 +16,7 @@ class HeadLinePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final viewModel = ref.read(viewModelProvider.notifier);
     viewModel.setParameters(
-      searchType: SearchType.HEAD_LINE,
+      searchType: SearchType.headLine,
     );
 
     final asyncValue = ref.watch(newsListProvider);
@@ -26,7 +26,7 @@ class HeadLinePage extends ConsumerWidget {
     return SafeArea(
       child: Scaffold(
         floatingActionButton: FloatingActionButton(
-          tooltip: Strings.Refresh,
+          tooltip: Strings.refresh,
           onPressed: () => onRefresh(context, ref),
           child: const Icon(Icons.refresh),
         ),
@@ -44,7 +44,7 @@ class HeadLinePage extends ConsumerWidget {
                               _openArticleWebPage(article, context),
                         ),
                       )
-                    : const Center(child: Text(Strings.DataEmpty)),
+                    : const Center(child: Text(Strings.dataEmpty)),
                 error: (error, _) => Center(child: Text(error.toString())),
                 loading: () => const Center(child: CircularProgressIndicator()),
               ),
@@ -53,7 +53,7 @@ class HeadLinePage extends ConsumerWidget {
               padding: const EdgeInsets.all(16.0),
               child: SmoothPageIndicator(
                   controller: pageController,
-                  count: Constants.PAGE_SIZE,
+                  count: Constants.pageSize,
                   effect: const WormEffect(
                     dotHeight: 12,
                     dotWidth: 12,
@@ -71,7 +71,7 @@ class HeadLinePage extends ConsumerWidget {
     final viewModel = ref.read(viewModelProvider.notifier);
 
     viewModel.setParameters(
-      searchType: SearchType.HEAD_LINE,
+      searchType: SearchType.headLine,
     );
 
     ref.read(counterProvider.notifier).update((state) => state + 1);
