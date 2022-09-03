@@ -4,7 +4,10 @@ import 'package:news_feed/const/strings.dart';
 class SearchBar extends StatelessWidget {
   final ValueChanged onSearch;
 
-  SearchBar({required this.onSearch});
+  const SearchBar({
+    Key? key,
+    required this.onSearch,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

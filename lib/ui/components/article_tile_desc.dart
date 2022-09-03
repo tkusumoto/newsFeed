@@ -6,9 +6,11 @@ import 'package:news_feed/style/style.dart';
 
 class ArticleTileDesc extends ConsumerWidget {
   final Article article;
+
   const ArticleTileDesc({
+    Key? key,
     required this.article,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

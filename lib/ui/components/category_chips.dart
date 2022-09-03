@@ -6,7 +6,10 @@ import 'package:news_feed/data/category_info.dart';
 class CategoryChips extends HookConsumerWidget {
   final ValueChanged onCategorySelected;
 
-  CategoryChips({required this.onCategorySelected});
+  const CategoryChips({
+    Key? key,
+    required this.onCategorySelected,
+  }) : super(key: key);
 
   // ChoiceChip参考：https://api.flutter.dev/flutter/material/ChoiceChip-class.html
   @override

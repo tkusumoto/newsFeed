@@ -22,7 +22,7 @@ final viewModelProvider =
 
 // FutureProvider patten
 final newsListProvider = FutureProvider<List<Article>>((ref) async {
-  final counter = ref.watch(counterProvider);
+  ref.watch(counterProvider);
   final repository = ref.read(newsRepositoryProvider);
   final viewModelNotifier = ref.watch(viewModelProvider.notifier);
   return repository.getNews(

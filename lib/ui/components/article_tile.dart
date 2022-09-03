@@ -10,9 +10,10 @@ class ArticleTile extends ConsumerWidget {
   final ValueChanged onArticleClicked;
 
   const ArticleTile({
+    Key? key,
     required this.article,
     required this.onArticleClicked,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

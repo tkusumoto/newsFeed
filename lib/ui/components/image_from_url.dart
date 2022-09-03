@@ -5,7 +5,11 @@ import 'package:news_feed/const/strings.dart';
 
 class ImageFromUrl extends ConsumerWidget {
   final String? imageUrl;
-  const ImageFromUrl({this.imageUrl});
+
+  const ImageFromUrl({
+    Key? key,
+    this.imageUrl,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

@@ -7,7 +7,10 @@ import 'package:webview_flutter/webview_flutter.dart';
 class WebPageScreen extends ConsumerWidget {
   final Article article;
 
-  const WebPageScreen({required this.article});
+  const WebPageScreen({
+    Key? key,
+    required this.article,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
